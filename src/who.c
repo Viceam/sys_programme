@@ -50,5 +50,5 @@ void show_time(long timeval)
     char *cp;
     cp = ctime(&timeval);
 
-    printf("%.24s", cp);
+    printf("%24.20s", cp + 4);
 }
