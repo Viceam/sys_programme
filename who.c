@@ -39,7 +39,8 @@ void show_info(struct utmp *utbufd)
     show_time(utbufd->ut_time);
     printf(" ");
 # ifdef SHOWHOST
-    printf("(%s)", utbufd->ut_host);
+    if(utbufd->ut_host[0] != '\0')
+        printf("(%s)", utbufd->ut_host);
 # endif
     printf("\n");
 }
